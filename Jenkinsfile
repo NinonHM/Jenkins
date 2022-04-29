@@ -3,7 +3,10 @@ node {
         checkout scm
     }  
     stage('Package') {
-       sh "mvn package -DskipTests"
+       sh 'mvn package -DskipTests'
+    }
+    stage('Test') {
+        sh 'mvn test'
     }
 }
 
